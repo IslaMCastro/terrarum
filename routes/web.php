@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\CadastroController;
-use App\Http\Controllers\PessoaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', function () {
-    return view('index');
-})->name('home');
-
-Route::resource('cadastro',CadastroController::class);
-Route::resource('pessoa',PessoaController::class);
+    return view('welcome');
+});

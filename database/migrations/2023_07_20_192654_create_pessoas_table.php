@@ -6,13 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /**"nome","cpfcnpj","cep" ,"numero", "email", "telefone", "cadastro_id"
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 50);
+            $table->integer('cpfcnpj', 50)->unique();
+            $table->string('cep',10);
+            $table->string('numero',20);
+            $table->string('email', 100);
+            $table->string('telefone', 20);
+            $table->unsignedBigInteger('cadastro_id');
+            $table->foreign('cadastro_id')->references('id')->on('cadastro');
             $table->timestamps();
         });
     }
