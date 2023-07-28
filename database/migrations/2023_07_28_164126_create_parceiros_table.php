@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('parceiros', function (Blueprint $table) {
             $table->id();
-            $table->string("setor",150);       
-            $table->unsignedBigInteger('pessoa_id');
-            $table->foreign('pessoa_id')->references('id')->on('pessoa');
+            $table->string("setor");       
             $table->timestamps();
         });
     }

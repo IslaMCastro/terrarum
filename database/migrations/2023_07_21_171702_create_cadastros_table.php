@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cadastros', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 50)->unique();
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }

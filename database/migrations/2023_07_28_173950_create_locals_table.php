@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('locals', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("coordenada",50);
-            $table->bigInteger("valorcontrato",50);
-            $table->string("setor",50);             
-            $table->unsignedBigInteger('cadastro_id');
-            $table->foreign('cadastro_id')->references('id')->on('cadastro');
+            $table->bigInteger("coordenada");
+            $table->bigInteger("valorcontrato");
+            $table->string("setor");       
+           
             $table->timestamps();
         });
     }

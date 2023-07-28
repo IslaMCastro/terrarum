@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id(); // "cargo","salario" ,"contabancaria", "pessoa_id"
-            $table->string("cargo",50);
-            $table->numeric("salario",50);
-            $table->string("contabancaria",20)->unique();       
-            $table->unsignedBigInteger('pessoa_id');
-            $table->foreign('pessoa_id')->references('id')->on('pessoa');
+            $table->string("cargo");
+            $table->decimal("salario");
+            $table->string("contabancaria")->unique();       
+           
             $table->timestamps();
         });
     }
