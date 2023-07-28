@@ -11,9 +11,4 @@ class Pessoa extends Model
 
     protected $fillable = ["nome","cpfcnpj","cep" ,"numero", "email", "telefone", "cadastro_id"];
 
-    public function cadastro()
-    {
-        return $this->belongsTo(Cadastro::class,
-         "cadastro_id");
-    }
 }

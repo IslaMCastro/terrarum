@@ -25,8 +25,8 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        $cadastro = Cadastro::all();
-        return view("pessoa.create", compact(["cadastro"]));
+        
+        return view("pessoa.create");
         //
     }
 
@@ -55,8 +55,8 @@ class PessoaController extends Controller
      */
     public function edit(Pessoa $pessoa)
     {
-        $cadastro = cadastro::all();
-        return view("pessoa.edit", compact(["pessoa","cadastro"]));//
+       
+        return view("pessoa.edit");//
     }
 
     /**

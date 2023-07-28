@@ -28,8 +28,7 @@ class StorePessoaRequest extends FormRequest
             "cep" ,"numero" => 'required|min:0|max:50', 'required|min:0|max:50',
             "email" => 'required|min:0|max:50',
             "telefone" => 'required|min:0|max:50',
-            "cadastro_id" => 'required|min:0|max:50',
-            
+                        
         ];
     }
 }

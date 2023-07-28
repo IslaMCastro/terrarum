@@ -11,14 +11,16 @@ class cadastro extends Model
 
     protected $fillable = ["nome"];
 
-    public function pessoa()
+    public function produto()
     {
         return $this->belongsTo(Pessoa::class,
          "pessoa_id");
     }
 
-    public function locais()
+    public function local()
     {
         return $this->belongsTo(locais::class);
     }
+  
+
 }

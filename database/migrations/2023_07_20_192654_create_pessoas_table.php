@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('numero',20);
             $table->string('email', 100);
             $table->string('telefone', 20);
-            $table->unsignedBigInteger('cadastro_id');
-            $table->foreign('cadastro_id')->references('id')->on('cadastro');
             $table->timestamps();
         });
     }
