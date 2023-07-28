@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('cadastros', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->unique();
-            $table->timestamps();
+            $table->string('nome',30)->unique();
+            $table->timestamps(); //cria as tabelas com as datas atualizadas, 'tabela criada em: atualizada em: '
         });
     }
 

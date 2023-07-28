@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->bigInteger('cpfcnpj')->unique();
-            $table->bigInteger('cep');
-            $table->integer('numero');
-            $table->string('email');
-            $table->string('telefone');
+            $table->string('nome',30);
+            $table->bigInteger('cpfcnpj',20)->unique();
+            $table->integer('cep',20);
+            $table->integer('numero',20);
+            $table->string('email',30);
+            $table->string('telefone',20);
             $table->timestamps();
         });
     }
