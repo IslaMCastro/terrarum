@@ -25,7 +25,7 @@ class UpdateLocalRequest extends FormRequest
             "coordenadas" => 'required|min:0|max:50',
             "valorcontrato" => 'required|min:0|max:50',
             "setor" => 'required|min:0|max:50', 
-            "cadastro_id" => 'required|min:0|max:50'
+            
             //
         ];
     }

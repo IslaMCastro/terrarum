@@ -8,11 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Local extends Model
 {
     use HasFactory;
-    protected $fillable = ["coordenadas","valorcontrato", "setor", "cadastro_id"];
-
-    public function cadastro()
-    {
-        return $this->belongsTo(cadastro::class,
-         "cadastro_id");
-    }
+    protected $fillable = ["coordenadas","valorcontrato", "setor"];
+  
 }

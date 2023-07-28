@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger("coordenada");
             $table->bigInteger("valorcontrato");
-            $table->string("setor");       
-           
+            $table->string("setor");  
             $table->timestamps();
         });
     }

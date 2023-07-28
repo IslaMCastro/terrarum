@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Local;
 use App\Http\Requests\StoreLocalRequest;
 use App\Http\Requests\UpdateLocalRequest;
-use App\Models\cadastro;
-use App\Models\Pessoa;
+
 
 class LocalController extends Controller
 {
@@ -26,8 +25,7 @@ class LocalController extends Controller
      */
     public function create()
     {
-        $cadastro = cadastro::all();
-        return view("cadastro.create", compact(["cadastro"]));
+        return view("local.create");
         //
     }
 
@@ -36,8 +34,8 @@ class LocalController extends Controller
      */
     public function store(StoreLocalRequest $request)
     {
-        $data = $request->all();
-        $local = Local::create($data);
+        $data = $request->all(); //valida os dados de acordo com a data
+        $local = Local::create($data); // 
         return redirect()->route('local.index');
         //
     }
@@ -47,7 +45,7 @@ class LocalController extends Controller
      */
     public function show(Local $local)
     {
-        return view("local.show", compact(["local"]));
+        return view("local.show", compact(["local"])); // retorna o request 'original' acreditando que os dados foram enviados corretamente.
         //
     }
 
@@ -56,8 +54,7 @@ class LocalController extends Controller
      */
     public function edit(Local $local)
     {
-        $pessoa = Pessoa::all();
-        return view("local.edit", compact(["local","pessoa"]));
+        return view("local.edit"); // alem de mostrar as informações é possivel editar
         //
     }
 
@@ -67,7 +64,7 @@ class LocalController extends Controller
     public function update(UpdateLocalRequest $request, Local $local)
     {
         $data = $request->all();
-        $local->update($data);
+        $local->update($data); 
         return redirect()->route('local.index');
         //
     }
@@ -78,7 +75,7 @@ class LocalController extends Controller
     public function destroy(Local $local)
     {
         if (isset($local)) {
-            $local->delete();
+            $local->delete(); // sempre validar antes de destruir
         }
         return redirect()->route('local.index');
         //

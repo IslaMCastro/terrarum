@@ -7,12 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. "nome","tipo","descricao" , "valor", "obs"
      */
     public function up(): void
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->bigInteger('tipo');
+            $table->bigInteger('descricao');
+            $table->integer('valor');
+            $table->string('obs');
             $table->timestamps();
         });
     }

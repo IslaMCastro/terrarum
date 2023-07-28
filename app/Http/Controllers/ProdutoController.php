@@ -13,6 +13,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
+        $produto = produto::all();
+        $total = $produto->count();
+        return view("produto.index", compact(["produto", "total"]));
         //
     }
 
@@ -21,6 +24,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
+        return view("produto.create");
         //
     }
 
@@ -29,6 +33,9 @@ class ProdutoController extends Controller
      */
     public function store(StoreProdutoRequest $request)
     {
+        $data = $request->all();
+        $produto = produto::create($data);
+        return redirect()->route('produto.index');
         //
     }
 
@@ -37,6 +44,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
+        return view("produto.show", compact(["produto"]));
         //
     }
 
@@ -45,6 +53,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
+        return view("produto.edit");
         //
     }
 
@@ -53,6 +62,9 @@ class ProdutoController extends Controller
      */
     public function update(UpdateProdutoRequest $request, Produto $produto)
     {
+        $data = $request->all();
+        $produto->update($data);
+        return redirect()->route('produto.index');
         //
     }
 
@@ -61,6 +73,10 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
+        if (isset($produto)) {
+            $produto->delete();
+        }
+        return redirect()->route('produto.index');
         //
     }
 }
