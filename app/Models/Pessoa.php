@@ -9,6 +9,6 @@ class Pessoa extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["nome","cpfcnpj","cep" ,"numero", "email", "telefone", "cadastro_id"];
+    protected $fillable = ["nome","cpfcnpj","cep" ,"numero", "email", "telefone"];
 
 }

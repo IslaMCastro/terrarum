@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**"nome","cpfcnpj","cep" ,"numero", "email", "telefone", "cadastro_id"
+    /**"nome","cpfcnpj","cep" ,"numero", "email", "telefone",
      * Run the migrations.
      */
     public function up(): void
