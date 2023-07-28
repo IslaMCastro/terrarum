@@ -55,6 +55,8 @@ class FuncionarioController extends Controller
      */
     public function edit(Funcionario $funcionario)
     {
+        $pessoa = Pessoa::all();
+        return view("funcionario.edit", compact(["funcionario","pessoa"]));
         //
     }
 
@@ -63,6 +65,9 @@ class FuncionarioController extends Controller
      */
     public function update(UpdateFuncionarioRequest $request, Funcionario $funcionario)
     {
+        $data = $request->all();
+        $funcionario->update($data);
+        return redirect()->route('funcionario.index');
         //
     }
 
@@ -71,6 +76,10 @@ class FuncionarioController extends Controller
      */
     public function destroy(Funcionario $funcionario)
     {
+        if (isset($funcionario)) {
+            $funcionario->delete();
+        }
+        return redirect()->route('funcionario.index');
         //
     }
 }
